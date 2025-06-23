@@ -3,7 +3,6 @@ import SwiftUI
 struct OnboardingWelcome: View {
     var body: some View {
         ZStack {
-            // Background
             LinearGradient(
                 gradient: Gradient(colors: [Color.blue, Color.yellow]),
                 startPoint: .topLeading,
@@ -21,30 +20,36 @@ struct OnboardingWelcome: View {
 
             GeometryReader { geo in
                 VStack(spacing: geo.size.height * 0.025) {
-                    Spacer(minLength: geo.size.height * 0.04)
 
                     // Logo
                     Image("iqLogo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: geo.size.height * 0.18)
+                        .frame(height: geo.size.height * 0.20)
+                        .padding(.leading, geo.size.width * 0.05)
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
                     // Title
                     Text("From Experience,\nFor Real Change")
-                        .font(.system(size: geo.size.width * 0.10, weight: .semibold))
-                        .multilineTextAlignment(.center)
+                        .font(.system(size: geo.size.width * 0.11, weight: .regular))
+                        .multilineTextAlignment(.leading)
                         .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.horizontal, geo.size.width * 0.05)
+                    
 
                     // Subtitle
-                    Text("Developed with university students,\nresearch specialists, and people who’ve\nbeen through it.")
-                        .font(.system(size: geo.size.width * 0.045))
+                    Text("Developed with university students, research specialists, and people who’ve been through it.")
+                        .font(.system(size: geo.size.width * 0.048))
                         .foregroundColor(.white.opacity(0.9))
-                        .multilineTextAlignment(.center)
-                        .lineSpacing(4)
-                        .padding(.horizontal, geo.size.width * 0.08)
+                        .multilineTextAlignment(.leading)
+                        .lineSpacing(5)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, geo.size.width * 0.05)
 
                     // Ratings Box
+                    
+                    Spacer()
                     HStack(spacing: geo.size.width * 0.05) {
                         HStack(spacing: 6) {
                             Image(systemName: "star.fill")
@@ -59,7 +64,7 @@ struct OnboardingWelcome: View {
                             Text("AVERAGE")
                             Text("RATING")
                         }
-                        .font(.system(size: geo.size.width * 0.028, weight: .semibold))
+                        .font(.system(size: geo.size.width * 0.03, weight: .semibold))
                         .foregroundColor(.white)
 
                         Rectangle()
@@ -70,33 +75,32 @@ struct OnboardingWelcome: View {
                             Text("OVER 5K")
                             Text("ACTIVE USERS")
                         }
-                        .font(.system(size: geo.size.width * 0.028, weight: .semibold))
+                        .font(.system(size: geo.size.width * 0.03, weight: .semibold))
                         .foregroundColor(.white)
                     }
                     .padding(.vertical, geo.size.height * 0.02)
                     .padding(.horizontal, geo.size.width * 0.06)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 6)
-                            .stroke(Color.white.opacity(0.8), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.white.opacity(0.8), lineWidth: 4)
                     )
 
-                    
-                    HStack{
+                    Spacer()
+
+                    // Logos right above CTA
+                    HStack(spacing: geo.size.width * 0.05) {
                         Image("umichLogo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: geo.size.height * 0.03)
+                            .frame(height: geo.size.height * 0.035)
 
-                        
                         Image("cmuLogo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(height: geo.size.height * 0.15)
-
-                            
-                        
+                            .frame(height: geo.size.height * 0.155)
                     }
-                    .padding(.top, 100.0)
+                    .padding(.bottom, geo.size.height * 0)
+                    .padding(.bottom, -50.0)
                     
                     // CTA Button
                     Button(action: {
@@ -110,7 +114,7 @@ struct OnboardingWelcome: View {
                             .background(Color.white)
                             .cornerRadius(16)
                     }
-                    .padding(.horizontal, geo.size.width * 0.12)
+                    .padding(.horizontal, geo.size.width * 0.05)
 
                     // Footer
                     HStack(spacing: 8) {
@@ -120,7 +124,7 @@ struct OnboardingWelcome: View {
                     }
                     .font(.system(size: geo.size.width * 0.03))
                     .foregroundColor(.white.opacity(0.8))
-                    .padding(.bottom, geo.size.height * 0.03)
+                    .padding(.bottom, geo.size.height * 0.02)
                 }
                 .frame(width: geo.size.width, height: geo.size.height)
             }

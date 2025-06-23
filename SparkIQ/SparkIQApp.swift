@@ -11,7 +11,7 @@ import SwiftUI
 struct SparkIQApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardingWelcome()
         }
     }
 }

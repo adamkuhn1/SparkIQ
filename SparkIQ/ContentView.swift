@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  SparkIQ
-//
-//  Created by Adam K on 6/22/25.
-//
+
 
 import SwiftUI
 
@@ -13,7 +8,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("hello work, world!")
+            Text(" work, world!")
         }
         .padding()
     }
